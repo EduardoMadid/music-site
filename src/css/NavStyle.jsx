@@ -4,24 +4,25 @@ import Colors from '../constants/Colors';
 export const NavStyle = styled.header`
     .nav {
         grid-area: nav;
-        background-color: ${Colors.blue};
+        background-color: ${Colors.black}; 
     }
 
     .nav .container {
         display: flex;
-        padding: 30px 40px;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         height: 10vh;
     }
 
+    .nav .container{
+        color: white;
+    }
+
     .nav .logo {
-        font-size: 2rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: ${props => props.theme.color};
+        width: 150px;  
+        height: auto;  
+        max-width: 100%;  
     }
 
     .nav ul {
@@ -29,19 +30,23 @@ export const NavStyle = styled.header`
         align-items: center;
         gap: 2rem;
         list-style: none;
+
+    }
+    .nav ul .link:hover {
+    border-bottom: 2px solid ${Colors.blue};
     }
 
     .nav ul .link {
         font-size: 1.2rem;
         text-transform: uppercase;
         text-decoration: none;
-        color: ${props => props.theme.color};
+        color: ${Colors.white}; 
         font-weight: 400;
     }
 
     .botaoTema button {
-        background-color: ${props => props.theme.background};
-        color: ${props => props.theme.color};
+        background-color: ${Colors.gray}; 
+        color: ${Colors.black}; 
         padding: 8px 16px;
         font-size: 1rem;
         font-weight: 900;
@@ -52,14 +57,18 @@ export const NavStyle = styled.header`
     }
 
     .botaoTema button:hover {
-        background-color: ${props => props.theme.background};
+        background-color: ${Colors.green}; 
+    }
+
+    .nome{
+        letter-spacing:2px;
     }
 
     .hamburger {
         display: none;
         font-size: 2rem;
         cursor: pointer;
-        color: ${props => props.theme.color}; 
+        color: ${Colors.white}; 
     }
 
     @media (max-width: 830px) {
@@ -68,7 +77,7 @@ export const NavStyle = styled.header`
             position: absolute;
             top: 70px;
             right: 0;
-            background-color: ${props => props.theme.background};
+            background-color: ${Colors.gray}; 
             flex-direction: column;
             gap: 1rem;
             padding: 20px;
@@ -77,11 +86,11 @@ export const NavStyle = styled.header`
         }
 
         .nav ul.active {
-            display: flex;  
+            display: flex;
         }
 
         .hamburger {
-            display: block;  
+            display: block;
         }
     }
 `;
